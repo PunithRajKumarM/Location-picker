@@ -1,13 +1,143 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(0, 0, 31);
+  color: rgb(241, 233, 233);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 2rem 0;
+}
+
+.header h1 {
+  font-style: italic;
+  font-variant-caps: petite-caps;
+}
+
+.header img {
+  width: 4rem;
+}
+
+.places {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.places-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 1rem;
+  padding: 2rem;
+  border: 1px solid white;
+}
+
+.place-detail img {
+  width: 15rem;
+}
+
+.place-detail button {
+  cursor: pointer;
+  position: relative;
+}
+
+.place-detail button h3 {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  background-color: rgba(255, 255, 0, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+
+#delete-confirmation {
+  padding: 1rem;
+}
+
+#delete-confirmation h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #5d0909;
+}
+
+#delete-confirmation p {
+  margin: 0 auto;
+  font-size: 1.15rem;
+  max-width: 38ch;
+  color: #804242;
+}
+
+#confirmation-action {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+#confirmation-action button:first-child {
+  background-color: #5d0909;
+  color: white;
+  border: none;
+}
+
+#confirmation-action button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+#confirmation-action button:nth-child(2) {
+  border: none;
+  color: #5d0909;
+}
+
+.modal {
+  min-width: 30rem;
+  padding: 0;
+  z-index: 2;
+  background-color: #d5c7bc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  animation: slide-down-fade-in 0.3s ease-out forwards;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes slide-down-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
